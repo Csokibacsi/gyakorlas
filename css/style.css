@@ -1,0 +1,19 @@
+@font-face{
+    font-family:BebasNeue;
+    src:url(../fonts/bebas_neue/BebasNeue-Regular.ttf);
+    /*font-weight:bold;*/
+}
+
+
+body{margin:0;}
+body h2{
+    font-family:BebasNeue!important;
+}
+
+input[type="text"], input[type="email"]{
+    background-color:#ddd;
+}
+
+[class$="control"]{
+    border:1px solid /*rgba(255.0.0.1)*/ tan;
+}
