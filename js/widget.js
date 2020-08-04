@@ -10,6 +10,9 @@ function weather(){
 function weekDays(szam){
     let showWeather = document.querySelector("span.show-weather");
     let het = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"];
+    
+    /*let temp = [-1, 10, 15, 20, 25];
+    let random = Math.floor(Math.random(temp[0], temp[4]));*/
 
     switch(szam){
         case 0:
@@ -35,6 +38,12 @@ function weekDays(szam){
         break;
         default: 
         showWeather.innerHTML = "";
-        
+
     }
 }
+
+/*function Random() {
+    let temp = [-1, 10, 15, 20, 25];
+    let random = temp[Math.floor(Math.random()*temp.length)];
+    alert(random);
+}*/
