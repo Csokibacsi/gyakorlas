@@ -10,38 +10,77 @@
   
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Gyakorlás</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="form.html">Form</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="table.html">Table</a>
-                  </li>
-                
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <br>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Időjárás</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          Nap: 
+        </li>
+        
+        <li class="nav-item dropdown">
+          
+          <div class="form-group">
+            
+            <select class="form-control" name="select-day" id="exampleFormControlSelect1">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <button onclick="weather()" class="btn btn-outline-primary" name="submit" type="button">Előrejelzés</button>
+        </li>
+       
+        <li>
+          <span class="show-weather"> </span>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col3"></div>
+      <div class="col6">
+        <h3>Hambi rendelés</h3>
+        <form action="">
+         
+          <div class="form-group">
+            <label for="">Mennyiség</label>
+            <input type="number" name="amount-input" class="form-control" value="1">
+            <small class="form-text text-muted">
+              Minimum 1, maximum 10db
+            </small>
+          </div>
+          <div class="form-group">
+            Fizetendő: <span class="show-amount">0</span> Ft
+          </div>
+
+          <button onclick="calcAmount()" type="button" class="btn btn-primary">Megrendelés</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<script src="/js/main.js"></script>
+<script src="/js/widget.js"></script>
 
         
 
