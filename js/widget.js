@@ -20,7 +20,7 @@ function weekDays(szam){
         temp.push(i); 
     }
 
-
+    /*Random hőmérsékleti adatok generálása */
     let random = temp[Math.floor(Math.random()*temp.length)];
     let napiMenu;
 
@@ -34,8 +34,9 @@ function weekDays(szam){
     } else {
         napiMenu = "jéghideg limonádé";
     }
-    
 
+    
+    /*Random hőmérséklet érték az adott számhoz tartozó naphoz megjeleníti*/
     switch(szam){
         case 0:
         showWeather.innerHTML = het[0] + " " + random + " fok, ajánlatunk mára: " + napiMenu ;
@@ -62,6 +63,10 @@ function weekDays(szam){
         showWeather.innerHTML = "";
 
     }
+
+    hetiMax(temp);
+    hetiMin(temp);
+    hetiAvg(temp);
 }
 
 /*function Random() {
@@ -69,3 +74,39 @@ function weekDays(szam){
     let random = temp[Math.floor(Math.random()*temp.length)];
     alert(random);
 }*/
+
+function hetiMax(temp){
+    let max = 0;
+    for(let i=0; i<temp.length; i++){
+        if(temp[i]>max){
+            max = temp[i];
+        }
+    }
+    let maxTemp = document.querySelector("span.max-temp");
+    maxTemp.innerHTML = "Heti maximum: " + max;
+}
+
+function hetiMin(temp){
+    let min = 0;
+    for(let i=0; i<temp.length; i++){
+        if(temp[i]<min){
+            min = temp[i];
+        }
+    }
+    let minTemp = document.querySelector("span.min-temp");
+    minTemp.innerHTML = "Heti minimum: " + min;
+}
+
+function hetiAvg(temp){
+    let all = 0;
+    let avg = 0;
+    for(let i=0; i<temp.length; i++){
+        all += i;
+    }
+    avg = all/temp.length;
+    let avgTemp = document.querySelector("span.avg-temp");
+    avgTemp.innerHTML = "Heti átlag: " + avg;
+}
+
+
+
