@@ -13,16 +13,23 @@ function weekDays(szam){
 
     let het = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"];
     
-    let temp = [-1, 10, 15, 20, 25];
+    /*let temp = [-1, 10, 15, 20, 25];*/
+
+    let temp = [];
+    for(let i=0; i<30; i++){
+        temp.push(i); 
+    }
+
+
     let random = temp[Math.floor(Math.random()*temp.length)];
     let napiMenu;
 
-    if(random<0){napiMenu = "forró csoki";
-    } else if(random>=0 && random<15) {
+    if(random==0){napiMenu = "forró csoki";
+    } else if(random>0 && random<=15) {
         napiMenu = "meleg tea";
-    } else if(random>=15 && random<20) {
+    } else if(random>15 && random<=20) {
         napiMenu = "finom süti";
-    } else if(random>=20 && random<25){
+    } else if(random>20 && random<=25){
         napiMenu = "fagyi";
     } else {
         napiMenu = "jéghideg limonádé";
