@@ -42,3 +42,62 @@ function sumPrice(price, amountNumber){
     }
    
 }
+
+
+let alertClose = document.querySelectorAll(".close[data-dismiss='alert']");
+for (let i = 0; i<alertClose.length; i++ ){
+    alertClose[i].addEventListener("click", function(ev){
+      //console.log(ev);
+      this.parentElement.style.display = "none";
+    });
+} 
+
+
+
+
+//Contact lista:
+
+let users = [
+    {csalad: "Nap", kereszt: "Levente", kor: "33" },
+    {csalad: "Vég", kereszt: "Béla", kor: "44" },
+    {csalad: "Élő", kereszt: "Flóra", kor: "22" },
+    {csalad: "Cserepes", kereszt: "Virág", kor: "19" },
+];
+
+let tBody = document.querySelector("#userTable tbody");
+let createTD = function(html, parent){
+    let td = document.createElement("td");
+    td.innerHTML = html; /*parseInt(k)+1;*/
+    return parent.appendChild(td);
+} 
+
+let createButtonGroup = function(parent){
+    let group = document.createElement("div");
+    group.className = "btn-group";
+    
+    let btnInfo = document.createElement("button");
+    btnInfo.className = "btn-info btn";
+    btnInfo.innerHTML = "<i class='fas fa-sync'></i>";
+
+    let btnDanger = document.createElement("button");
+    btnDanger.className = "btn-danger btn";
+    btnDanger.innerHTML = "<i class='fas fa-sync-alt'></i>";
+
+    group.appendChild(btnInfo);
+    group.appendChild(btnDanger);
+
+    let td = document.createElement("td");
+    td.appendChild(group);
+    parent.appendChild(td);
+}
+
+for(let k in users){
+    let tr = document.createElement("tr");
+    createTD(parseInt(k)+1, tr);
+    for(let value of Object.values(users[k])) {
+        createTD(value, tr);
+    }
+    createButtonGroup(tr);
+    tBody.appendChild(tr);
+}
+

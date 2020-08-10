@@ -8,10 +8,47 @@
 <body>
     <div class="container">
         <div class="row">
-
+            <div class="teszt">
+                <span class="alert">A szöveg elrejtéséhez nyomd meg a gombot</span>
+                <button class="close" type="button" name="gomb">Elrejt</button>
+            </div>
         </div>
+        <div class="row">
+            <select id="feltet" type="text" class="select" name="choose">
+
+            </select>
+        </div>
+
     </div>   
-<script src="/js/widget.js"></script>
+
+<script>
+
+//Elrejtős gomb kódja:
+let CloseDiv = document.querySelectorAll(".close");
+for (let i = 0; i<CloseDiv.length; i++ ){
+CloseDiv[i].addEventListener("click", function(ev) {
+    this.parentElement.style.display = "none";
+});
+}
+
+//SELECT manipulálás
+let tetelek = [
+    "tej",
+    "kenyér",
+    "cukor",
+    "kefír"
+];
+
+let tetelSelect = document.querySelector("#feltet");
+let i = 0;
+while(i<tetelek.length){
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerHTML = tetelek[i];
+    tetelSelect.appendChild(option);
+    i++;
+}
+</script>
 
 </body>
 </html>
